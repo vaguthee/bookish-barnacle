@@ -1,0 +1,12 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/dashboard.js": "/js/dashboard.js",
+    "/js/editor.js": "/js/editor.js",
+    "/css/editor.css": "/css/editor.css",
+    "/css/app.css": "/css/app.css",
+    "/css/guest.css": "/css/guest.css",
+    "/css/tailwind.css": "/css/tailwind.css",
+    "/css/spa.css": "/css/spa.css",
+    "/js/spa.js": "/js/spa.js",
+    "/js/jquery.js": "/js/jquery.js"
+}

@@ -1,0 +1,1475 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text-bl",
+				"text-blue-600 \t--text-opacity: 1; color: rgba(49, 130, 206, var(--text-opacity));"
+			],
+			[
+				"des",
+				"destination_url\tabc"
+			],
+			[
+				"proc",
+				"product\t(index.blade.php)"
+			],
+			[
+				"w-",
+				"w-1/2\tabc"
+			],
+			[
+				"inline",
+				"inline-block \tdisplay: inline-block;"
+			],
+			[
+				"fle",
+				"flex-1 \tflex: 1 1 0%;"
+			],
+			[
+				"pa",
+				"paragraphs\tabc"
+			],
+			[
+				"justif",
+				"justify-around \tjustify-content: space-around;"
+			],
+			[
+				"font",
+				"font-ubuntu\tabc"
+			],
+			[
+				"text-x",
+				"text-xl \tfont-size: 1.25rem;"
+			],
+			[
+				"tex",
+				"text-left \ttext-align: left;"
+			],
+			[
+				"pu",
+				"publish\tabc"
+			],
+			[
+				"Art",
+				"Article\tabc"
+			],
+			[
+				"fill",
+				"fill-current\tabc"
+			],
+			[
+				"jus",
+				"justify-between \tjustify-content: space-between;"
+			],
+			[
+				"prev",
+				"preview"
+			],
+			[
+				"bor",
+				"border-8 \tborder-width: 8px;"
+			],
+			[
+				"border-gr",
+				"border-green-700 \t--border-opacity: 1; border-color: rgba(47, 133, 90, var(--border-opacity));"
+			],
+			[
+				"text-gr",
+				"text-gray-800\t(article-create-en.blade.php)"
+			],
+			[
+				"bg",
+				"bg-teal-600\tabc"
+			],
+			[
+				"text",
+				"text-xs \tfont-size: 0.75rem;"
+			],
+			[
+				"onD",
+				"onDropError\tabc"
+			],
+			[
+				"contac",
+				"contact_no\t(ShowProfileSidebar.js)"
+			],
+			[
+				"contact",
+				"contact_no\tabc"
+			],
+			[
+				"onUpdate",
+				"onUpdateProfileClick\tabc"
+			],
+			[
+				"setPro",
+				"setProfileUpdateFail\tabc"
+			],
+			[
+				"setP",
+				"setProfileUpdateSuccess\tabc"
+			],
+			[
+				"e",
+				"event\tabc"
+			],
+			[
+				"I",
+				"Input\tabc"
+			],
+			[
+				"rende",
+				"renderEditContact\tabc"
+			],
+			[
+				"trac",
+				"tracking-wide \tletter-spacing: 0.025em;"
+			],
+			[
+				"fot",
+				"font-bold\tabc"
+			],
+			[
+				"text-",
+				"text-2xl\tabc"
+			],
+			[
+				"l",
+				"ltr\tabc"
+			],
+			[
+				"publi",
+				"published_at"
+			],
+			[
+				"ord",
+				"orderBy"
+			],
+			[
+				"main_image_",
+				"main_image_thumbnail_url"
+			],
+			[
+				"ran",
+				"random\t(app.php)"
+			],
+			[
+				"main",
+				"main_image_url\tabc"
+			],
+			[
+				"Ima",
+				"Image\t(article-create-dv.blade.php)"
+			],
+			[
+				"save",
+				"saveMainImageThumbnail\tabc"
+			],
+			[
+				"generate",
+				"generated_file_name\tabc"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"s",
+				"sizes\tabc"
+			],
+			[
+				"create",
+				"createSizes\tabc"
+			],
+			[
+				"flex-wrap",
+				"flex-no-wrap \tflex-wrap: nowrap;"
+			],
+			[
+				"just",
+				"justify-evenly \tjustify-content: space-evenly;"
+			],
+			[
+				"Arti",
+				"ArticleController\tabc"
+			],
+			[
+				"lang",
+				"language\t(article-create-dv.blade.php)"
+			],
+			[
+				"ape",
+				"appearance-none\tabc"
+			],
+			[
+				"max",
+				"max-w-md \tmax-width: 28rem;"
+			],
+			[
+				"mna",
+				"main_image_url\tabc"
+			],
+			[
+				"image",
+				"main_image_url"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"mb-1",
+				"mb-10\t(article-show-dv.blade.php)"
+			],
+			[
+				"mb",
+				"mb-10\t(article-edit.blade.php)"
+			],
+			[
+				"mt",
+				"mt-2\tabc"
+			],
+			[
+				"bg-gra",
+				"bg-gray-800 \t--bg-opacity: 1; background-color: rgba(45, 55, 72, var(--bg-opacity));"
+			],
+			[
+				"w-1",
+				"w-1/4 \twidth: 25%;"
+			],
+			[
+				"bg-pi",
+				"bg-pink-600 \t--bg-opacity: 1; background-color: rgba(213, 63, 140, var(--bg-opacity));"
+			],
+			[
+				"max-w-screen",
+				"max-w-screen-md\tabc"
+			],
+			[
+				"mx",
+				"mx-8 \tmargin-left: 2rem; margin-right: 2rem;"
+			],
+			[
+				"tracking-",
+				"tracking-normal \tletter-spacing: 0;"
+			],
+			[
+				"leading-",
+				"leading-relaxed \tline-height: 1.625;"
+			],
+			[
+				"strec",
+				"items-stretch \talign-items: stretch;"
+			],
+			[
+				"lea",
+				"leading-loose \tline-height: 2;"
+			],
+			[
+				"le",
+				"leading-tight\tabc"
+			],
+			[
+				"com",
+				"compact\tabc"
+			],
+			[
+				"null",
+				"nullable\tabc"
+			],
+			[
+				"ar",
+				"article\tabc"
+			],
+			[
+				"cons",
+				"console\tabc"
+			],
+			[
+				"sub",
+				"submit\tabc"
+			],
+			[
+				"fileNa",
+				"fileNameToStore\tabc"
+			],
+			[
+				"Imag",
+				"ImageController\t(ImageController.php)"
+			],
+			[
+				"cur",
+				"cursor-pointer \tcursor: pointer;"
+			],
+			[
+				"text-gray-",
+				"text-gray-500\t(tailwind.css)"
+			],
+			[
+				"leading",
+				"leading-normal\t(tailwind.css)"
+			],
+			[
+				"space",
+				"space-y-reverse\t(tailwind.css)"
+			],
+			[
+				"spa",
+				"spacing\t(tailwind.css)"
+			],
+			[
+				"justit",
+				"justify-between \tjustify-content: space-between;"
+			],
+			[
+				"bet",
+				"justify-between \tjustify-content: space-between;"
+			],
+			[
+				"mar",
+				"margin\t(tailwind.css)"
+			],
+			[
+				"cam",
+				"campaign_id\tabc"
+			],
+			[
+				"mys",
+				"mysqlconn\tabc"
+			],
+			[
+				"user",
+				"user_id\t(pointinarea.py)"
+			],
+			[
+				"ci",
+				"city_lat\tabc"
+			],
+			[
+				"city",
+				"city_lng\tabc"
+			],
+			[
+				"imp",
+				"impressions\tabc"
+			],
+			[
+				"dist",
+				"distance_point_sw\tabc"
+			],
+			[
+				"fetc",
+				"fetch_save\tabc"
+			],
+			[
+				"form",
+				"formatted_address\tabc"
+			],
+			[
+				"can",
+				"candidate\tabc"
+			],
+			[
+				"cci",
+				"city_states_row_city_lng\tabc"
+			],
+			[
+				"row_ci",
+				"city_states_row_city_name"
+			],
+			[
+				"parent",
+				"parent_mileage_tasks\tabc"
+			],
+			[
+				"ch",
+				"child_task\tabc"
+			],
+			[
+				"elig",
+				"eligible_tasks\tabc"
+			],
+			[
+				"paren",
+				"parent_task\tabc"
+			],
+			[
+				"st",
+				"storeImageOnS3\tabc"
+			],
+			[
+				"req",
+				"request\tabc"
+			],
+			[
+				"up",
+				"uploadImage\tabc"
+			],
+			[
+				"file",
+				"fileName\tabc"
+			],
+			[
+				"emit",
+				"emitChange\tabc"
+			],
+			[
+				"ev",
+				"event\t(TagsInput.vue)"
+			],
+			[
+				"ge",
+				"generateInputString\tabc"
+			],
+			[
+				"tag",
+				"tags\tabc"
+			],
+			[
+				"Ta",
+				"TagsInput\tabc"
+			],
+			[
+				"max-w",
+				"max-w-md\t(addon2.blade.php)"
+			],
+			[
+				"mr-",
+				"md:mr-20\t(hero2.blade.php)"
+			],
+			[
+				"xxl",
+				"xl:mx-48\tabc"
+			],
+			[
+				"ml",
+				"ml-16\tabc"
+			],
+			[
+				"ex",
+				"exit"
+			],
+			[
+				"php",
+				"phpinfo"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/var/www/technews/technews/resources/views/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 11404,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/resources/views/dashboard.blade.php",
+			"settings":
+			{
+				"buffer_size": 4673,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/resources/views/ad-index.blade.php",
+			"settings":
+			{
+				"buffer_size": 6624,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/database/seeds/DatabaseSeeder.php",
+			"settings":
+			{
+				"buffer_size": 349,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/aimme/Desktop/layerremoved.json",
+			"settings":
+			{
+				"buffer_size": 556128,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/aimme/projects/duplicate-images/README.md",
+			"settings":
+			{
+				"buffer_size": 6626,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/database/migrations/2020_11_20_131835_create_ads_table.php",
+			"settings":
+			{
+				"buffer_size": 1074,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/database/migrations/2020_11_09_143242_create_articles_table.php",
+			"settings":
+			{
+				"buffer_size": 1190,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import bs4 as bs\nimport pickle\nimport requests\nimport datetime as dt\nimport os\nimport pandas as pd\nimport pandas_datareader.data as web\n\n\n\ndef fetch_data():\n    with open(\"tickers.pickle\",'rb') as f:\n            tickers=pickle.load(f)\n\n    if not os.path.exists('stock_details'):\n        os.makedirs('stock_details')\n    count=200\n\n    start= dt.datetime(2010,1,1)\n    end=dt.datetime(2020,6,22)\n    count=0\n    for ticker in tickers:\n        if count==200:\n            break\n        count+=1\n        print(ticker)\n        \n        try:\n                df=web.DataReader(ticker, 'yahoo', start, end)\n                df.to_csv('stock_details/{}.csv'.format(ticker))\n        except:\n                print(\"Error\")\n                continue\n\n        \nfetch_data()",
+			"settings":
+			{
+				"buffer_size": 759,
+				"line_ending": "Unix",
+				"name": "import bs4 as bs"
+			}
+		},
+		{
+			"contents": "import bs4 as bs\nimport pickle\nimport requests\nimport datetime as dt\nimport os\nimport pandas as pd\nimport pandas_datareader.data as web\n\n\n\ndef fetch_data():\n    with open(\"tickers.pickle\",'rb') as f:\n            tickers=pickle.load(f)\n\n    if not os.path.exists('stock_details'):\n        os.makedirs('stock_details')\n    count=200\n\n    start= dt.datetime(2010,1,1)\n    end=dt.datetime(2020,6,22)\n    count=0\n    for ticker in tickers:\n        if count==200:\n            break\n        count+=1\n        print(ticker)\n        \n        try:\n                df=web.DataReader(ticker, 'yahoo', start, end)\n                df.to_csv('stock_details/{}.csv'.format(ticker))\n        except:\n                print(\"Error\")\n                continue\n\n        \nfetch_data()",
+			"settings":
+			{
+				"buffer_size": 759,
+				"line_ending": "Unix",
+				"name": "import bs4 as bs"
+			}
+		},
+		{
+			"file": "/home/aimme/Dropbox/DSBA/DL/Jupyter Notebook/fetch_data.py",
+			"settings":
+			{
+				"buffer_size": 760,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/app/Http/Controllers/AdController.php",
+			"settings":
+			{
+				"buffer_size": 1954,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/routes/web.php",
+			"settings":
+			{
+				"buffer_size": 1450,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/technews/technews/resources/views/ad-create-dv.blade.php",
+			"settings":
+			{
+				"buffer_size": 5682,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"prett",
+				"Pretty JSON: Format JSON Lines"
+			],
+			[
+				"pres",
+				"MultiEditUtils: Preserve Case"
+			],
+			[
+				"prese",
+				"MultiEditUtils: Preserve Case"
+			],
+			[
+				"ar",
+				"Arithmetic"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"open pr",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"material",
+				"Activate Materialize Theme"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/home/aimme/Dropbox/DSBA/DL/Jupyter Notebook/stock_details/AIV.csv",
+		"/media/aimme/BX500/Projects/find-duplicate-images/duplicate-images/README.md",
+		"/media/aimme/BX500/Projects/find-duplicate-images/Photos/READMET.md",
+		"/var/www/technews/technews/app/Ad.php",
+		"/var/www/technews/technews/resources/views/article-show-dv.blade.php",
+		"/var/www/technews/technews/database/migrations/2020_11_20_131835_create_ads_table.php",
+		"/var/www/technews/technews/app/Http/Controllers/AdController.php",
+		"/var/www/technews/technews/resources/views/dashboard.blade.php",
+		"/var/www/technews/technews/resources/views/index.blade.php",
+		"/var/www/technews/technews/database/seeds/DatabaseSeeder.php",
+		"/var/www/technews/technews/database/seeds/AdsTableSeeder.php",
+		"/var/www/technews/technews/resources/views/ad-create-en.blade.php",
+		"/var/www/technews/technews/app/Http/Controllers/GuestController.php",
+		"/var/www/technews/technews/routes/web.php",
+		"/home/aimme/projects/contributions/clicker/clicker_old.py",
+		"/var/www/technews/technews/public/index3.php",
+		"/var/www/technews/technews/storage/framework/views/048797ed4f91472a97a3ab038b5f1d0c21084bd4.php",
+		"/var/www/technews/technews/resources/views/index-backup2.blade.php",
+		"/var/www/technews/technews/resources/views/article-show-en.blade.php",
+		"/var/www/technews/technews/resources/views/article-edit-en.blade.php",
+		"/var/www/technews/technews/resources/views/article-edit-dv.blade.php",
+		"/var/www/technews/technews/resources/views/article-create-en.blade.php",
+		"/var/www/technews/technews/resources/views/article-create-dv.blade.php",
+		"/var/www/technews/technews/storage/framework/views/4f49fef44811d462ffbe3216ff8d6ca093249a76.php",
+		"/var/www/technews/technews/storage/framework/views/1a3acefe19a613383ae56afd5a56b22853d5598c.php",
+		"/var/www/technews/technews/database/seeds/ArticlesTableSeeder.php",
+		"/var/www/technews/technews/database/seeds/UsersTableSeeder.php",
+		"/var/www/technews/technews/README.md",
+		"/var/www/save-disk.svg",
+		"/var/www/technews/technews/app/Http/Controllers/ArticleController.php",
+		"/var/www/technews/technews/database/migrations/2020_11_09_143242_create_articles_table.php",
+		"/var/www/technews/technews/resources/views/components/analytics.blade.php",
+		"/var/www/technews/technews/resources/views/components/google-analytics.blade.php",
+		"/var/www/beetle-backend/app/Http/Controllers/UserController.php",
+		"/var/www/beetle-react-frontend/src/routes/UserDirectory/routes/UserShow/containers/ShowProfileSidebar.js",
+		"/var/www/beetle-react-frontend/src/config/config.js",
+		"/var/www/beetle-react-frontend/src/components/Dropzone/Dropzone.js",
+		"/var/www/beetle-react-frontend/src/routes/RewardDirectory/routes/RewardCreate/containers/RewardCreate.js",
+		"/var/www/beetle-react-frontend/src/routes/RewardDirectory/routes/RewardCreate/modules/RewardCreateModule.js",
+		"/var/www/beetle-backend/routes/api.php",
+		"/var/www/beetle-react-frontend/src/routes/UserDirectory/routes/UserShow/modules/ShowProfileModule.js",
+		"/var/www/beetle-react-frontend/src/routes/UserDirectory/routes/UserShow/containers/ShowProfile.js",
+		"/var/www/beetle-react-frontend/src/routes/UserDirectory/routes/UserShow/index.js",
+		"/var/www/beetle-backend/app/Http/Controllers/APIController.php",
+		"/var/www/beetle-react-frontend/src/routes/UserDirectory/routes/UserShow/components/Events.js",
+		"/var/www/beetle-backend/public/index.php",
+		"/var/www/beetle-backend/vendor/barryvdh/laravel-cors/src/HandleCors.php",
+		"/var/www/beetle-backend/app/Http/Middleware/Cors.php",
+		"/var/www/beetle-backend/.env",
+		"/etc/apache2/sites-available/mybumpadmin.local.conf",
+		"/var/www/technews/technews/app/Article.php",
+		"/var/www/technews/technews/database/migrations/2020_11_10_032957_create_images_table.php",
+		"/var/www/technews/technews/app/Image.php",
+		"/var/www/technews/technews/app/Http/Controllers/ImageController.php",
+		"/var/www/technews/technews/config/app.php",
+		"/var/www/technews/technews/package.json",
+		"/var/www/technews/technews/resources/views/index-backup.blade.php",
+		"/var/www/technews/technews/database/migrations/2020_11_09_143231_create_authors_table.php",
+		"/var/www/technews/technews/resources/js/editor.js",
+		"/var/www/technews/technews/resources/views/article-create.blade.php",
+		"/var/www/technews/technews/tailwind.config.js",
+		"/var/www/technews/technews/resources/sass/app.scss",
+		"/var/www/technews/technews/resources/views/article-create-1.blade.php",
+		"/var/www/smemaldives/resources/views/edit-page.blade.php",
+		"/var/www/technews/technews/resources/views/article-edit.blade.php",
+		"/var/www/technews/technews/resources/views/article-show.blade.php",
+		"/var/www/smemaldives/resources/views/edit-page-html.blade.php",
+		"/var/www/python/ba active areas/updated_distances.py",
+		"/var/www/python/ba active areas/readme.md",
+		"/var/www/python/ba active areas/calculate_radius.py",
+		"/var/www/python/ba active areas/compare_points.py",
+		"/var/www/technews/public/index.html",
+		"/var/www/technews/package.json",
+		"/var/www/technews/technews/resources/js/appbackup.js",
+		"/var/www/technews/technews/webpack.mix.js",
+		"/var/www/technews/technews/public/css/editor.css",
+		"/var/www/python/ba active areas/.env",
+		"/var/www/python/incampaign-impressions/pointinarea.py",
+		"/var/www/technews/css/tailwind.css",
+		"/var/www/technews/technews/config/filesystems.php",
+		"/var/www/technews/technews/.env",
+		"/var/www/technews/technews/app/Author.php",
+		"/var/www/technews/technews/composer.json",
+		"/var/www/technews/technews/resources/js/quill.js",
+		"/var/www/technews/technews/resources/js/app.js",
+		"/etc/apache2/sites-available/technews.local.conf",
+		"/var/www/technews/public/build/tailwind.css",
+		"/var/www/technews/tailwind.config.js",
+		"/var/www/technews/node_modules/tailwindcss/stubs/defaultConfig.stub.js",
+		"/var/www/technews/postcss.config.js",
+		"/var/www/technews/index.html",
+		"/var/www/python/ba active areas/get_data_from_maps_api.py",
+		"/home/aimme/MyBump/output/city_states.csv",
+		"/opt/datagrip/product-info.json",
+		"/home/aimme/Desktop/datagrip.desktop",
+		"/var/www/beetle-backend/app/Http/Controllers/PayoutBucketController.php",
+		"/var/www/beetle-backend/routes/web.php",
+		"/var/www/beetle-backend/app/Http/Controllers/MobileApiController.php",
+		"/var/www/beetle-backend/.env.example",
+		"/var/www/smemaldives/resources/js/screens/getstarted.vue",
+		"/etc/hosts",
+		"/etc/apache2/sites-available/mybumpbackend.local.conf",
+		"/var/www/smemaldives/resources/js/components/PhotoUpload.vue",
+		"/var/www/smemaldives/app/Http/Controllers/ImageController.php",
+		"/var/www/smemaldives/resources/js/base.js",
+		"/var/www/smemaldives/routes/web.php",
+		"/var/www/smemaldives/resources/js/components/PhotoUpload2.vue",
+		"/var/www/smemaldives/resources/js/components/TagsInput.vue",
+		"/var/www/smemaldives/resources/js/components/DeletableTag.vue",
+		"/home/aimme/Downloads/env",
+		"/var/www/smemaldives/resources/js/editor.js",
+		"/var/www/smemaldives/package.json",
+		"/var/www/smemaldives/node_modules/webpack/bin/webpack.js",
+		"/var/www/smemaldives/webpack.mix.js",
+		"/var/www/smemaldives/resources/js/dashboard.js",
+		"/home/aimme/Downloads/Youtube dl/readme.md",
+		"/var/www/smemaldives/.env",
+		"/home/aimme/Desktop/Ubuntu Setup.md",
+		"/home/aimme/Downloads/logo.png",
+		"/etc/sysctl.conf",
+		"/etc/apache2/sites-available/smemaldives.local.conf",
+		"/var/www/advertiser-cadillac/resources/js/components/CheckboxInput.vue",
+		"/var/www/advertiser-cadillac/resources/views/marketing/crowdvertise.blade.php",
+		"/var/www/advertiser-cadillac/resources/views/marketing/includes/hero.blade.php",
+		"/var/www/advertiser-cadillac/resources/js/components/ClientForm.vue",
+		"/var/www/advertiser-cadillac/resources/views/marketing/includes/dashboard.blade.php",
+		"/var/www/advertiser-cadillac/resources/views/marketing/includes/navbar.blade.php",
+		"/var/www/advertiser-cadillac/resources/views/marketing/includes/footer.blade.php"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"                ",
+			"               ",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"    ",
+			"<p class=\"font-bold text-green-600\">",
+			"add_type",
+			"title",
+			"main_image_url",
+			"true,,",
+			"ad_type",
+			"'ad_type'",
+			"User",
+			"user",
+			"route('ads.show', $article->id)",
+			"Technology in a way that everyone understands.",
+			"އައިޓީ  ދާއިރާގެ  މައުލޫމާތު  އެންމެންނަށް  އޮޅުންފިލާނޭ  ގޮތަށް.",
+			"6",
+			"500",
+			"font-bold",
+			"bg-blue-200",
+			"green",
+			"font-bold",
+			"Public View",
+			"align-baseline",
+			"laguage",
+			"artilce",
+			"route('articles.show', $article->id)",
+			"Article",
+			"updatePr",
+			"onDrop",
+			"validHeight",
+			"MyDropzone",
+			"componentWillReceiveProps",
+			"onDrop",
+			"internal_notes",
+			"UPDATE_PROFILE_SUCCESS",
+			"profileUpdateSuccess",
+			"profile",
+			"update_profile",
+			"user/update_profile",
+			"update_notes",
+			"update_profle",
+			"ban",
+			"updateInternalNotes",
+			"setProfileUpdate",
+			"setProfileUpdateSuccess",
+			"banUser",
+			"UpdateProfile",
+			"updateProfile",
+			"updateInternalNotes",
+			"onFormSubmit",
+			"SET_PROFILE_UPDATE",
+			"INTERNAL_NOTES",
+			"setInternalNotesSuccess",
+			"INTERNAL_NOTES",
+			"InternalNotes",
+			"setInternalNotesSuccess",
+			"update_profile",
+			"fluid",
+			"TextArea",
+			"renderEditContact",
+			"this.props.user.contact",
+			"verifyUserPhone",
+			"banned_reason",
+			"renderBanStatus",
+			"ShowProfileSidebar",
+			"bindActionCreators",
+			"history",
+			"Phone Verfication Status"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 10,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/var/www/technews/technews/resources/views/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4129,
+								4129
+							],
+							[
+								6003,
+								6003
+							],
+							[
+								8042,
+								8042
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1379.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/var/www/technews/technews/resources/views/dashboard.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2348,
+								2348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 441.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/var/www/technews/technews/resources/views/ad-index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2150,
+								2150
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/var/www/technews/technews/database/seeds/DatabaseSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								273,
+								273
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/aimme/Desktop/layerremoved.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 556128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556128,
+								556128
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 491512.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/aimme/projects/duplicate-images/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/var/www/technews/technews/database/migrations/2020_11_20_131835_create_ads_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1074,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								808,
+								808
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/var/www/technews/technews/database/migrations/2020_11_09_143242_create_articles_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 759,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "import bs4 as bs",
+							"default_dir": "/var/www/technews/technews/database/migrations",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 759,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								759,
+								759
+							]
+						],
+						"settings":
+						{
+							"auto_name": "import bs4 as bs",
+							"default_dir": "/var/www/technews/technews/database/migrations",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/home/aimme/Dropbox/DSBA/DL/Jupyter Notebook/fetch_data.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/var/www/technews/technews/app/Http/Controllers/AdController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1954,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								431,
+								431
+							],
+							[
+								619,
+								619
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/var/www/technews/technews/routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								697,
+								697
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/var/www/technews/technews/resources/views/ad-create-dv.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4709,
+								4709
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 75.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "technews.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"APIController",
+				"beetle-backend/app/Http/Controllers/APIController.php"
+			],
+			[
+				"UserController",
+				"beetle-backend/app/Http/Controllers/UserController.php"
+			],
+			[
+				"article_t",
+				"technews/technews/database/migrations/2020_11_09_143242_create_articles_table.php"
+			],
+			[
+				"PayoutC",
+				"beetle-backend/app/Http/Controllers/PayoutBucketController.php"
+			],
+			[
+				"ImageController",
+				"smemaldives/app/Http/Controllers/ImageController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/var/www/sublime project files/admin2.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 465.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
