@@ -1947,6 +1947,54 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EntityCardAddRemove.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EntityCardAddRemove.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['entity', 'index'],
+  methods: {
+    goToShow: function goToShow() {
+      this.$router.push({
+        name: 'entity.show',
+        params: {
+          entityId: this.entity.id,
+          entity: this.entity
+        }
+      })["catch"](function () {});
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Navbar.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Navbar.vue?vue&type=script&lang=js& ***!
@@ -2061,9 +2109,18 @@ __webpack_require__.r(__webpack_exports__);
     this.getEntities();
   },
   methods: {
+    searchTextChanged: _.debounce(function (e) {
+      this.search();
+    }, 500),
     getEntities: function getEntities() {
       var self = this;
       this.http().get('/api/discover').then(function (response) {
+        self.entitites = response.data.entitites;
+      });
+    },
+    search: function search() {
+      var self = this;
+      this.http().get('/api/search?q=' + this.$refs.input.value).then(function (response) {
         self.entitites = response.data.entitites;
       });
     }
@@ -2082,6 +2139,65 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_EntityCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/EntityCard */ "./resources/js/components/EntityCard.vue");
+/* harmony import */ var _components_EntityCardAddRemove__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/EntityCardAddRemove */ "./resources/js/components/EntityCardAddRemove.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2121,23 +2237,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['entityId'],
   components: {
-    EntityCard: _components_EntityCard__WEBPACK_IMPORTED_MODULE_0__["default"]
+    EntityCard: _components_EntityCard__WEBPACK_IMPORTED_MODULE_0__["default"],
+    EntityCardAddRemove: _components_EntityCardAddRemove__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
       entity: {},
       nearbyEntities: {},
-      trip: {}
+      trip: {},
+      gettingThere: {},
+      selectedTripEntitiesId: []
     };
   },
   mounted: function mounted() {
     this.id = this.$route.params.entityId;
     this.entity = this.$route.params.entity;
     this.getEntity(this.id);
-    console.log('mounted');
   },
   watch: {
     $route: {
@@ -2150,20 +2269,30 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    setData: function setData(self, data) {
+      self.entity = data.entity;
+      self.nearbyEntities = data.nearbyEntities;
+      self.trip = data.trip;
+      self.gettingThere = data.gettingThere;
+      self.selectedTripEntitiesId = data.selectedTripEntitiesId;
+    },
     getEntity: function getEntity(id) {
       var self = this;
       this.http().get('/api/entities/' + id).then(function (response) {
-        self.entity = response.data.entity;
-        self.nearbyEntities = response.data.nearbyEntities;
-        self.trip = response.data.trip;
+        self.setData(self, response.data);
       });
     },
-    addToTrip: function addToTrip(entity) {
+    addToTrip: function addToTrip(entityId) {
+      console.log(entityId);
       var self = this;
-      this.http().get('/api/entities/' + entity.id + '/addtotrip').then(function (response) {
-        self.entity = response.data.entity;
-        self.nearbyEntities = response.data.nearbyEntities;
-        self.trip = response.data.trip;
+      this.http().get('/api/entities/' + entityId + '/addtotrip').then(function (response) {
+        self.setData(self, response.data);
+      });
+    },
+    removeFromTrip: function removeFromTrip(entity) {
+      var self = this;
+      this.http().get('/api/entities/' + entity.id + '/removefromtrip').then(function (response) {
+        self.setData(self, response.data);
       });
     },
     viewTrip: function viewTrip() {
@@ -2175,6 +2304,9 @@ __webpack_require__.r(__webpack_exports__);
           trip: this.trip
         }
       })["catch"](function () {});
+    },
+    openPage: function openPage(entity) {
+      alert('this will open the page');
     }
   }
 });
@@ -2267,6 +2399,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2286,6 +2429,18 @@ __webpack_require__.r(__webpack_exports__);
       this.http().get('/api/trips').then(function (response) {
         self.trips = response.data.trips;
       });
+    },
+    //payment gateway integration
+    makeBooking: function makeBooking(trip) {
+      if (confirm('Payment gateway appears here and it will ask whether you want to pay $' + trip.total_prepaid)) {
+        //make as if paid
+        var self = this;
+        this.http().get('/api/trips/' + trip.id + '/paid').then(function (response) {
+          self.trips = response.data.trips;
+        });
+      } else {
+        alert('Payment unsuccessfull');
+      }
     }
   }
 });
@@ -20040,6 +20195,121 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EntityCardAddRemove.vue?vue&type=template&id=7fa6a117&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EntityCardAddRemove.vue?vue&type=template&id=7fa6a117& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "bg-white border rounded-lg overflow-hidden mt-2",
+      class: _vm.index == 0 ? "" : "ml-1",
+      on: {
+        click: function($event) {
+          return _vm.goToShow()
+        }
+      }
+    },
+    [
+      _c("img", {
+        attrs: { src: _vm.entity.cover_image_url, alt: _vm.entity.name }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-6" }, [
+        _c(
+          "h4",
+          { staticClass: "font-semibold text-lg leading-tight truncate" },
+          [_vm._v(_vm._s(_vm.entity.name))]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "text-gray-600 text-xs uppercase font-semibold tracking-wide"
+          },
+          [
+            _vm._v(
+              "\n      " +
+                _vm._s(_vm.entity.type) +
+                " (" +
+                _vm._s(_vm.entity.category) +
+                ")\n    "
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-1" }, [
+          _vm._v(
+            "\n      " +
+              _vm._s(_vm.entity.average_price_currency) +
+              _vm._s(_vm.entity.average_price) +
+              "\n      "
+          ),
+          _c("span", { staticClass: "text-gray-600 text-sm" }, [
+            _vm._v(_vm._s(_vm.entity.island))
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "mt-2 flex items-center" },
+          [
+            _vm._l(5, function(i) {
+              return _c(
+                "svg",
+                {
+                  key: i,
+                  staticClass: "h-4 w-4 fill-current",
+                  class:
+                    i <= _vm.entity.average_rating
+                      ? "text-teal-500"
+                      : "text-gray-400",
+                  attrs: {
+                    viewBox: "0 0 24 24",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M8.133 20.333c-1.147.628-2.488-.387-2.269-1.718l.739-4.488-3.13-3.178c-.927-.943-.415-2.585.867-2.78l4.324-.654 1.934-4.083a1.536 1.536 0 0 1 2.804 0l1.934 4.083 4.324.655c1.282.194 1.794 1.836.866 2.78l-3.129 3.177.739 4.488c.219 1.331-1.122 2.346-2.269 1.718L12 18.214l-3.867 2.119z",
+                      "fill-rule": "evenodd"
+                    }
+                  })
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "ml-2 text-gray-600 text-sm" }, [
+              _vm._v(_vm._s(_vm.entity.total_review_count) + " reviews")
+            ])
+          ],
+          2
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Navbar.vue?vue&type=template&id=6dde423b& ***!
@@ -20150,9 +20420,9 @@ var staticRenderFns = [
           {
             staticClass:
               "no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2",
-            attrs: { href: "/trips" }
+            attrs: { href: "/recommendations" }
           },
-          [_vm._v("My Trips")]
+          [_vm._v("Recommendations")]
         ),
         _vm._v(" "),
         _c(
@@ -20160,9 +20430,9 @@ var staticRenderFns = [
           {
             staticClass:
               "no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2",
-            attrs: { href: "/nearby" }
+            attrs: { href: "/trips" }
           },
-          [_vm._v("Nearby")]
+          [_vm._v("My Trips")]
         ),
         _vm._v(" "),
         _c(
@@ -20210,25 +20480,35 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("p", { staticClass: "text-xl font-bold md:text-6xl" }, [
+    _c("p", { staticClass: "text-xl text-gray-900 font-bold md:text-6xl" }, [
       _vm._v("Discover")
     ]),
     _vm._v(" "),
     _c("input", {
+      ref: "input",
       staticClass: "input rounded-md w-full h-10 p-3",
-      attrs: { type: "text", name: "search", id: "search" }
+      attrs: {
+        type: "text",
+        name: "search",
+        id: "search",
+        placeholder:
+          "search by place name or excursion. eg: surf, shark, shipwreck resort or guest house name"
+      },
+      on: { input: _vm.searchTextChanged }
     }),
     _vm._v(" "),
     _c(
       "div",
       {
-        staticClass: "rounded-md border-2 border-green-900 p-3 mt-5",
+        staticClass: "rounded-md border-2 bg-blue-300 p-3 mt-5",
         attrs: { id: "stay" }
       },
       [
-        _c("p", { staticClass: "text-sm font-bold" }, [_vm._v("Stay")]),
+        _c("p", { staticClass: "text-lg text-gray-900 font-bold" }, [
+          _vm._v("Stay")
+        ]),
         _vm._v(" "),
-        _c("p", { staticClass: "text-xs" }, [
+        _c("p", { staticClass: "text-xs text-gray-700" }, [
           _vm._v("Resorts, Guest Houses, Hotels")
         ]),
         _vm._v(" "),
@@ -20255,13 +20535,15 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "rounded-md border-2 border-green-900 p-3 mt-5",
+        staticClass: "rounded-md border-2 bg-blue-300 p-3 mt-5",
         attrs: { id: "excursions" }
       },
       [
-        _c("p", { staticClass: "text-sm font-bold" }, [_vm._v("Excursions")]),
+        _c("p", { staticClass: "text-lg text-gray-900 font-bold" }, [
+          _vm._v("Excursions")
+        ]),
         _vm._v(" "),
-        _c("p", { staticClass: "text-xs" }, [
+        _c("p", { staticClass: "text-xs text-gray-700" }, [
           _vm._v("Surfing, Fishing, Diving")
         ]),
         _vm._v(" "),
@@ -20288,13 +20570,15 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "rounded-md border-2 border-green-900 p-3 mt-5",
+        staticClass: "rounded-md border-2 bg-blue-300 p-3 mt-5",
         attrs: { id: "shopping" }
       },
       [
-        _c("p", { staticClass: "text-sm font-bold" }, [_vm._v("Shopping")]),
+        _c("p", { staticClass: "text-lg text-gray-900 font-bold" }, [
+          _vm._v("Shopping")
+        ]),
         _vm._v(" "),
-        _c("p", { staticClass: "text-xs" }, [
+        _c("p", { staticClass: "text-xs text-gray-700" }, [
           _vm._v("Souvenier shops, convenience shops")
         ]),
         _vm._v(" "),
@@ -20321,13 +20605,15 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "rounded-md border-2 border-green-900 p-3 mt-5",
+        staticClass: "rounded-md border-2 bg-blue-300 p-3 mt-5",
         attrs: { id: "landmarks" }
       },
       [
-        _c("p", { staticClass: "text-sm font-bold" }, [_vm._v("Landmarks")]),
+        _c("p", { staticClass: "text-lg text-gray-900 font-bold" }, [
+          _vm._v("Landmarks")
+        ]),
         _vm._v(" "),
-        _c("p", { staticClass: "text-xs" }),
+        _c("p", { staticClass: "text-xs text-gray-700" }),
         _vm._v(" "),
         _c(
           "div",
@@ -20373,75 +20659,398 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.entity
-    ? _c("div", [
-        _c("div", [
-          _c("p", { staticClass: "text-xl font-bold md:text-6xl mt-5" }, [
-            _vm._v(_vm._s(_vm.entity.name))
-          ]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.entity.island))]),
-          _vm._v(" "),
-          _c("div"),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-full flex" }, [
-            _c(
-              "button",
-              {
-                staticClass:
-                  "flex-1 bg-green-500 shadow appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-                on: {
-                  click: function($event) {
-                    return _vm.addToTrip(_vm.entity)
-                  }
-                }
-              },
-              [_vm._v("\n        ADD TO TRIP\n      ")]
-            ),
-            _vm._v(" "),
-            _vm.trip.user_trip_entities
-              ? _c(
+    ? _c(
+        "div",
+        [
+          _vm.trip.user_trip_entities
+            ? _c("div", { staticClass: "mt-5" }, [
+                _c(
                   "button",
                   {
                     staticClass:
-                      "flex-1 bg-green-500 shadow appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                      "inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
                     on: {
                       click: function($event) {
                         return _vm.viewTrip(_vm.entity)
                       }
                     }
                   },
-                  [_vm._v("\n        VIEW TRIP\n      ")]
+                  [_vm._v("View Trip")]
                 )
-              : _vm._e()
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-5" }, [
+            _c("div", { staticClass: "bg-gray-100 flex" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12"
+                },
+                [
+                  _c("div", { staticClass: "xl:max-w-lg xl:ml-auto" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "text-xsm font-bold text-gray-500 leading-tight sm:text-lg lg:text-lg xl:text-lg uppercase"
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(_vm.entity.type) +
+                            " (" +
+                            _vm._s(_vm.entity.category) +
+                            ")\n            "
+                        ),
+                        _vm.entity.island
+                          ? _c("span", [
+                              _vm._v("@ " + _vm._s(_vm.entity.island))
+                            ])
+                          : _vm._e()
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass:
+                        "mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover sm:object-center lg:hidden",
+                      attrs: { src: _vm.entity.cover_image_url, alt: "" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "h1",
+                      {
+                        staticClass:
+                          "mt-6 text-2xl font-bold text-gray-900 leading-tight sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.entity.name) +
+                            "\n            "
+                        ),
+                        _c("br", { staticClass: "hidden lg:inline" }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "mt-2 flex items-center" },
+                          [
+                            _vm._l(5, function(i) {
+                              return _c(
+                                "svg",
+                                {
+                                  key: i,
+                                  staticClass: "h-4 w-4 fill-current",
+                                  class:
+                                    i <= _vm.entity.average_rating
+                                      ? "text-teal-500"
+                                      : "text-gray-400",
+                                  attrs: {
+                                    viewBox: "0 0 24 24",
+                                    xmlns: "http://www.w3.org/2000/svg"
+                                  }
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      d:
+                                        "M8.133 20.333c-1.147.628-2.488-.387-2.269-1.718l.739-4.488-3.13-3.178c-.927-.943-.415-2.585.867-2.78l4.324-.654 1.934-4.083a1.536 1.536 0 0 1 2.804 0l1.934 4.083 4.324.655c1.282.194 1.794 1.836.866 2.78l-3.129 3.177.739 4.488c.219 1.331-1.122 2.346-2.269 1.718L12 18.214l-3.867 2.119z",
+                                      "fill-rule": "evenodd"
+                                    }
+                                  })
+                                ]
+                              )
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              { staticClass: "ml-2 text-gray-600 text-sm" },
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.entity.total_review_count) +
+                                    " reviews"
+                                )
+                              ]
+                            )
+                          ],
+                          2
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "break-words mt-2 text-gray-600 sm:mt-4 sm:text-xl"
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.entity.truncated_summary) +
+                            "\n          "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-4 sm:mt-6" }, [
+                      !_vm.selectedTripEntitiesId.includes(_vm.entity.id)
+                        ? _c(
+                            "button",
+                            {
+                              staticClass:
+                                "inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
+                              on: {
+                                click: function($event) {
+                                  return _vm.addToTrip(_vm.entity.id)
+                                }
+                              }
+                            },
+                            [_vm._v("Add To Trip")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.selectedTripEntitiesId.includes(_vm.entity.id)
+                        ? _c(
+                            "button",
+                            {
+                              staticClass:
+                                "inline-block px-5 py-3 rounded-lg shadow-lg bg-red-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
+                              on: {
+                                click: function($event) {
+                                  return _vm.removeFromTrip(_vm.entity)
+                                }
+                              }
+                            },
+                            [_vm._v("Remove")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
+                          on: {
+                            click: function($event) {
+                              return _vm.openPage(_vm.entity)
+                            }
+                          }
+                        },
+                        [_vm._v("More...")]
+                      )
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "hidden lg:block lg:w-1/2 lg:relative" },
+                [
+                  _c("img", {
+                    staticClass:
+                      "absolute inset-0 h-full w-full object-cover object-center",
+                    attrs: { src: _vm.entity.cover_image_url, alt: "" }
+                  })
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._l(_vm.gettingThere, function(transport) {
+            return _c("div", { staticClass: "mt-5" }, [
+              _c("div", { staticClass: "bg-gray-100 flex" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12"
+                  },
+                  [
+                    _c("div", { staticClass: "xl:max-w-lg xl:ml-auto" }, [
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-xsm font-bold text-gray-500 leading-tight sm:text-lg lg:text-lg xl:text-lg uppercase"
+                        },
+                        [
+                          _vm._v(
+                            _vm._s(transport.type) +
+                              " (" +
+                              _vm._s(transport.category) +
+                              ")\n            "
+                          ),
+                          transport.island
+                            ? _c("span", [
+                                _vm._v("@ " + _vm._s(transport.island))
+                              ])
+                            : _vm._e()
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass:
+                          "mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover sm:object-center lg:hidden",
+                        attrs: { src: transport.cover_image_url, alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "h1",
+                        {
+                          staticClass:
+                            "mt-6 text-xl font-bold text-gray-900 leading-tight sm:mt-8 sm:text-2xl lg:text-1xl xl:text-2xl"
+                        },
+                        [
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(transport.name) +
+                              "\n          "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "mt-2 text-gray-600 sm:mt-4 sm:text-xl break-words"
+                        },
+                        [
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(transport.travel_summary) +
+                              "\n          "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mt-4 sm:mt-6" }, [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "text-sm font-semibold text-gray-700 mr-2 mt-1"
+                          },
+                          [_vm._v(_vm._s(transport.days))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "flex w-full justify-start" },
+                          _vm._l(transport.hours_array, function(time) {
+                            return _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "inline-block bg-green-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1"
+                              },
+                              [_vm._v(_vm._s(time))]
+                            )
+                          }),
+                          0
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mt-4 sm:mt-6" }, [
+                        !_vm.selectedTripEntitiesId.includes(transport.id)
+                          ? _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.addToTrip(transport.id)
+                                  }
+                                }
+                              },
+                              [_vm._v("Add To Trip")]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.selectedTripEntitiesId.includes(transport.id)
+                          ? _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "inline-block px-5 py-3 rounded-lg shadow-lg bg-red-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.removeFromTrip(transport)
+                                  }
+                                }
+                              },
+                              [_vm._v("Remove")]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
+                            on: {
+                              click: function($event) {
+                                return _vm.openPage(transport)
+                              }
+                            }
+                          },
+                          [_vm._v("More...")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "hidden lg:block lg:w-1/2 lg:relative" },
+                  [
+                    _c("img", {
+                      staticClass:
+                        "absolute inset-0 h-full w-full object-cover object-center",
+                      attrs: { src: transport.cover_image_url, alt: "" }
+                    })
+                  ]
+                )
+              ])
+            ])
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-5" }, [
+            _c(
+              "p",
+              { staticClass: "text-sm font-bold md:text-xl text-gray-800" },
+              [_vm._v("Nearby")]
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "flex mt-5",
+                class:
+                  _vm.nearbyEntities.length >= 5
+                    ? "justify-between"
+                    : "justify-start"
+              },
+              _vm._l(_vm.nearbyEntities, function(item, index) {
+                return _c("EntityCard", {
+                  key: item.id,
+                  attrs: { entity: item, index: index }
+                })
+              }),
+              1
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "text-sm font-bold md:text-4xl mt-5" }, [
-          _c("p", [_vm._v("Nearby")]),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "flex mt-5",
-              class:
-                _vm.nearbyEntities.length >= 5
-                  ? "justify-between"
-                  : "justify-start"
-            },
-            _vm._l(_vm.nearbyEntities, function(item, index) {
-              return _c("EntityCard", {
-                key: item.id,
-                attrs: { entity: item, index: index }
-              })
-            }),
-            1
-          )
-        ])
-      ])
+        ],
+        2
+      )
     : _vm._e()
 }
 var staticRenderFns = [
@@ -20449,7 +21058,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("Getting There")])])
+    return _c("div", { staticClass: "mt-5" }, [
+      _c("p", { staticClass: "text-sm font-bold md:text-xl text-gray-800" }, [
+        _vm._v("Getting There")
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -20460,7 +21073,7 @@ var staticRenderFns = [
         "p",
         {
           staticClass:
-            "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1"
+            "inline-block bg-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1"
         },
         [_vm._v("   All       ")]
       ),
@@ -20469,7 +21082,7 @@ var staticRenderFns = [
         "p",
         {
           staticClass:
-            "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1 mr-2"
+            "inline-block bg-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1 mr-2"
         },
         [_vm._v("   Stays     ")]
       ),
@@ -20478,7 +21091,7 @@ var staticRenderFns = [
         "p",
         {
           staticClass:
-            "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1 mr-2"
+            "inline-block bg-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1 mr-2"
         },
         [_vm._v("  Excursions ")]
       ),
@@ -20487,7 +21100,7 @@ var staticRenderFns = [
         "p",
         {
           staticClass:
-            "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1 mr-2"
+            "inline-block bg-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1 mr-2"
         },
         [_vm._v("  Shopping   ")]
       )
@@ -20581,11 +21194,6 @@ var render = function() {
         _vm._v("My Trips")
       ]),
       _vm._v(" "),
-      _c("input", {
-        staticClass: "input rounded-md w-full h-10 p-3",
-        attrs: { type: "text", name: "search", id: "search" }
-      }),
-      _vm._v(" "),
       _vm._l(_vm.trips, function(trip, index) {
         return _c(
           "div",
@@ -20602,7 +21210,7 @@ var render = function() {
               "p",
               {
                 staticClass:
-                  "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1"
+                  "inline-block bg-gray-200 rounded-full py-1 text-sm font-semibold text-gray-700 mr-2 mt-1"
               },
               [
                 _vm._v(
@@ -20627,6 +21235,112 @@ var render = function() {
                 })
               }),
               1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "rounded-md border-2 border-blue-300 p-3 mt-5" },
+              [
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "font-semibold text-lg leading-tight truncate text-gray-800"
+                  },
+                  [_vm._v("ESTIMATED SPEND")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "font-semibold text-gray-500 text-lg leading-tight truncate mt-3"
+                  },
+                  [
+                    _vm._v("Booking: "),
+                    _c(
+                      "span",
+                      {
+                        staticClass:
+                          "font-semibold text-xl leading-tight truncate text-green-500"
+                      },
+                      [_vm._v("$" + _vm._s(trip.total_prepaid))]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "font-semibold text-gray-500 text-lg leading-tight truncate mt-3"
+                  },
+                  [
+                    _vm._v("Post Payments: "),
+                    _c(
+                      "span",
+                      {
+                        staticClass:
+                          "font-semibold text-xl leading-tight truncate text-green-500"
+                      },
+                      [_vm._v("$" + _vm._s(trip.total_postpaid))]
+                    ),
+                    trip.status == "booked"
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "ml-3 text-xs text-blue-300 bg-gray-800 rounded-full p-2 inline-block"
+                          },
+                          [_vm._v("BOOKED")]
+                        )
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex justify-between" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "font-semibold text-gray-500 text-4xl leading-tight mt-3"
+                    },
+                    [
+                      _vm._v("Total: \n          "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "font-semibold text-4xl leading-tight mt-3 text-green-500"
+                        },
+                        [_vm._v("$" + _vm._s(trip.total_price))]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  trip.status == "draft"
+                    ? _c(
+                        "button",
+                        {
+                          staticClass:
+                            "inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base",
+                          on: {
+                            click: function($event) {
+                              return _vm.makeBooking(trip)
+                            }
+                          }
+                        },
+                        [_vm._v("Book")]
+                      )
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-gray-800 mt-3" }, [
+                  _vm._v(
+                    "This is an estimate based on pricing estimates we have on hand for your convenience"
+                  )
+                ])
+              ]
             )
           ]
         )
@@ -36097,6 +36811,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EntityCard_vue_vue_type_template_id_7bb7d4be___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EntityCard_vue_vue_type_template_id_7bb7d4be___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/EntityCardAddRemove.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/EntityCardAddRemove.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EntityCardAddRemove_vue_vue_type_template_id_7fa6a117___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EntityCardAddRemove.vue?vue&type=template&id=7fa6a117& */ "./resources/js/components/EntityCardAddRemove.vue?vue&type=template&id=7fa6a117&");
+/* harmony import */ var _EntityCardAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EntityCardAddRemove.vue?vue&type=script&lang=js& */ "./resources/js/components/EntityCardAddRemove.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EntityCardAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EntityCardAddRemove_vue_vue_type_template_id_7fa6a117___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EntityCardAddRemove_vue_vue_type_template_id_7fa6a117___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/EntityCardAddRemove.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/EntityCardAddRemove.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/EntityCardAddRemove.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EntityCardAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./EntityCardAddRemove.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EntityCardAddRemove.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EntityCardAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/EntityCardAddRemove.vue?vue&type=template&id=7fa6a117&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/EntityCardAddRemove.vue?vue&type=template&id=7fa6a117& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EntityCardAddRemove_vue_vue_type_template_id_7fa6a117___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EntityCardAddRemove.vue?vue&type=template&id=7fa6a117& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EntityCardAddRemove.vue?vue&type=template&id=7fa6a117&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EntityCardAddRemove_vue_vue_type_template_id_7fa6a117___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EntityCardAddRemove_vue_vue_type_template_id_7fa6a117___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

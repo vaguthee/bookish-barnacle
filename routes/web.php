@@ -19,7 +19,9 @@ Route::group(['prefix' => 'api'], function() {
     Route::get('/search', 'DashboardController@search')->name('search');
     Route::get('/entities/{id}', 'EntityController@show')->name('entitites.show');
     Route::get('/entities/{id}/addtotrip', 'EntityController@addToTrip')->name('addToTrip');
+    Route::get('/entities/{id}/removefromtrip', 'EntityController@removeFromTrip')->name('removeFromTrip');
     Route::get('/trips/{id}', 'TripController@show')->name('trips.show');
+    Route::get('/trips/{id}/paid', 'TripController@paid')->name('trips.paid');
     Route::get('/trips', 'TripController@index')->name('trips.index');
 });
 

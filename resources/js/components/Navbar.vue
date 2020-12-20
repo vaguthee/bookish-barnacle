@@ -18,8 +18,8 @@
     <nav :class="isOpen ? 'block' : 'hidden'">
       <div class="px-2 pt-2 pb-4 sm:flex sm:items-center sm:p-0">
         <a href="/" class="no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2">Discover</a>
+        <a href="/recommendations" class="no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2">Recommendations</a>
         <a href="/trips" class="no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2">My Trips</a>
-        <a href="/nearby" class="no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2">Nearby</a>
         <a href="/profile" class="no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2">Profile</a>
         <a href="/logout" class="no-underline mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-blue-900 sm:mt-0 sm:ml-2">Sign Out</a>
       </div>

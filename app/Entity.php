@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Entity extends Model
 {
     protected $guarded = [];
+    protected $appends = array('truncated_summary','hours_array');
 
         /**
      * Scope a query to only include published posts.
@@ -47,5 +48,34 @@ class Entity extends Model
     public function entitites()
     {
         return $this->hasMany(self::class);
+    }
+
+    public function getTruncatedSummaryAttribute()
+    {
+        return $this->limitText($this->summary, 20);
+    }
+
+    public function limitText($text, $limit)
+    {
+        if (str_word_count($text, 0) > $limit) {
+            $words = str_word_count($text, 2);
+            $pos   = array_keys($words);
+            $text  = substr($text, 0, $pos[$limit]) . '...';
+        }
+        return $text;
+    }
+
+    // public function gettingThere()
+    // {
+    //     return $this->hasMany(Transport::class, 'to_entity');
+    // }
+
+    public function getHoursArrayAttribute()
+    {
+        if ($this->hours) {
+            return explode(',', $this->hours);
+        }
+
+        return [];
     }
 }

@@ -31,10 +31,13 @@ class DashboardController extends Controller
 
     public function search(Request $request)
     {
-        $stay = $this->getStay();
-        $excursions = $this->getExcursions();
-        $shopping = $this->getShopping();
-        $landmarks = $this->getLandmarks();
+        $query = $request->q;
+
+
+        $stay = $this->getStay($query);
+        $excursions = $this->getExcursions($query);
+        $shopping = $this->getShopping($query);
+        $landmarks = $this->getLandmarks($query);
 
         return [
             'entitites' => [
@@ -46,23 +49,55 @@ class DashboardController extends Controller
         ];
     }
 
-    protected function getStay()
+    protected function getStay($query = null)
     {
+        if ($query) {
+            return  $this->entitites->where('type', 'stay')->where(function($q) use ($query){
+              $q->where('name','LIKE',"%$query%")
+                ->orWhere('type','LIKE',"%$query%")  
+                ->orWhere('category','LIKE',"%$query%");  
+            })->get();        
+        }
+
         return  $this->entitites->where('type', 'stay')->get();        
     }
 
-    protected function getExcursions()
+    protected function getExcursions($query = null)
     {
+        if ($query) {
+            return  $this->entitites->where('type', 'excursion')->where(function($q) use ($query){
+              $q->where('name','LIKE',"%$query%")
+                ->orWhere('type','LIKE',"%$query%")  
+                ->orWhere('category','LIKE',"%$query%");  
+            })->get();        
+        }
+
         return  $this->entitites->where('type', 'excursion')->get();        
     }
 
-    protected function getShopping()
+    protected function getShopping($query = null)
     {
+        if ($query) {
+            return  $this->entitites->where('type', 'shopping')->where(function($q) use ($query){
+              $q->where('name','LIKE',"%$query%")
+                ->orWhere('type','LIKE',"%$query%")  
+                ->orWhere('category','LIKE',"%$query%");  
+            })->get();        
+        }
+
         return  $this->entitites->where('type', 'shopping')->get();        
     }
 
-    protected function getLandmarks()
+    protected function getLandmarks($query = null)
     {
+        if ($query) {
+            return  $this->entitites->where('type', 'landmark')->where(function($q) use ($query){
+              $q->where('name','LIKE',"%$query%")
+                ->orWhere('type','LIKE',"%$query%")  
+                ->orWhere('category','LIKE',"%$query%");  
+            })->get();        
+        }
+
         return  $this->entitites->where('type', 'landmark')->get();        
     }
 }

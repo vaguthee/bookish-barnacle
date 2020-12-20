@@ -21,14 +21,23 @@ class CreateEntitiesTable extends Migration
             $table->string('island')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
-            $table->unsignedInteger('total_review_count');
-            $table->float('average_rating');
-            $table->unsignedInteger('average_price');
-            $table->string('average_price_currency');
-            $table->string('cover_image_url');
+            $table->unsignedInteger('total_review_count')->nullable();
+            $table->float('average_rating')->nullable();
+            $table->unsignedInteger('average_price')->nullable();
+            $table->string('average_price_currency')->nullable();
+            $table->string('cover_image_url')->nullable();
             $table->boolean('published')->default(false);
             $table->text('summary')->nullable();
             $table->text('getting_here')->nullable();
+            #transport specific
+            $table->text('travel_summary')->nullable();
+            $table->unsignedInteger('from_entity')->nullable();
+            $table->unsignedInteger('to_entity')->nullable();
+            $table->text('days')->nullable();
+            $table->text('hours')->nullable();
+            // $table->text('summary')->nullable();
+            // $table->string('cover_image_url');
+            
             $table->timestamps();
         });
     }

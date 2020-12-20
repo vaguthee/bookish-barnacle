@@ -12,4 +12,9 @@ class Trip extends Model
     {
         return $this->hasMany(UserTripEntity::class,'trip_id');
     }
+
+    public function userTripTransports()
+    {
+        return $this->hasMany(UserTripTransport::class,'trip_id');
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatUserTripEntityTable extends Migration
+class CreatUserTripTransportTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatUserTripEntityTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_trip_entity', function (Blueprint $table) {
+        Schema::create('user_trip_transport', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('price')->nullable();
-            $table->boolean('is_booking')->nullable();
             $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('transport_id')->nullable();
             $table->unsignedInteger('entity_id')->nullable();
             $table->unsignedInteger('trip_id')->nullable();
             $table->timestamps();
@@ -31,6 +30,6 @@ class CreatUserTripEntityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_trip_entity');
+        Schema::dropIfExists('user_trip_transport');
     }
 }

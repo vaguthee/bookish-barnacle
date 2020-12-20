@@ -7,7 +7,7 @@
     <title>{{config('app.name')}}</title>
     <link href="{{ mix('css/spa.css') }}" type="text/css" rel="stylesheet"/>
 </head>
-<body class="bg-gray-400">
+<body class="bg-gray-200">
 <div id="spa" class="px-3 md:px-56 py-0 mx-auto">
     <NavBar></NavBar>
     <router-view></router-view>
