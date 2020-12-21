@@ -2,6 +2,10 @@
   <div>
     <p class="text-xl text-gray-900 font-bold md:text-6xl">Discover</p>
     <input type="text" name="search" id="search" class="input rounded-md w-full h-10 p-3" @input="searchTextChanged" ref="input" placeholder="search by place name or excursion. eg: surf, shark, shipwreck resort or guest house name">
+    <div class="flex flex-wrap" v-if="show_look_for">
+      <p class="font-semibold text-gray-700 text-xl mt-3">You can look for:</p>
+      <p class="w-full inline-block font-semibold text-sm text-gray-500 mt-3" v-for="item,index in look_for" :key="index">{{item}}</p> 
+    </div>
     <div id="stay" class="rounded-md border-2 bg-blue-300 p-3 mt-5">
       <p class="text-lg text-gray-900 font-bold">Stay</p>
       <p class="text-xs text-gray-700">Resorts, Guest Houses, Hotels</p>
@@ -45,8 +49,24 @@
           stay: [],
           excursions: [],
           shopping: [],
-          landmarks: []
-        }
+          landmarks: [],
+        },
+        show_look_for: false,
+        look_for: [
+          '🏢 · Resorts',
+          '🏠 · Guesthouses',
+          '🛳️ · Cruises',
+          '🏪 · Convenience Shops',
+          '🎁 · Gift Shops',
+          '🏺️ · Souvenir Shops',
+          '🏄 · Surfing Spots',
+          '🛥️ · Safari Excursions',
+          '🐠 · Diving',
+          '🎣 · Fishing',
+          '🕌 · Mosques',
+          '🏬 · Buildings',
+          '🖼️️ · Museums',
+        ]
       }
     },
     mounted() {
@@ -54,7 +74,13 @@
     },
     methods: {
       searchTextChanged: _.debounce(function (e) {
-        this.search();
+        if (this.$refs.input.value.length==0) {
+          this.show_look_for = true
+          this.getEntities()
+        } else {
+          this.show_look_for = false
+          this.search();
+        }
       }, 500),
       getEntities() {
         let self = this;

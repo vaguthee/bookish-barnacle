@@ -46,7 +46,7 @@
       },
       //payment gateway integration
       makeBooking(trip) {
-        if (confirm('Payment gateway appears here and it will ask whether you want to pay $' + trip.total_prepaid)) {
+        if (confirm('Payment gateway appears here and it will ask whether you want to pay $' + trip.total_prepaid + '. Are you sure you want to pay  for the bookings?')) {
           //make as if paid
             let self = this;
             this.http().get('/api/trips/'+trip.id+'/paid').then(function(response) {

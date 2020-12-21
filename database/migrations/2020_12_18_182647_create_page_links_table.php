@@ -15,8 +15,8 @@ class CreatePageLinksTable extends Migration
     {
         Schema::create('page_links', function (Blueprint $table) {
             $table->id();
-            $table->string('website');//fb or twitter or insta
-            $table->string('url'); //business page link
+            $table->string('website');
+            $table->string('url'); 
             $table->unsignedBigInteger('page_id')->index();
             $table->timestamps();
         });

@@ -15,19 +15,23 @@ class TripController extends Controller
 
     public function show($id)
     {
-        $trip = $this->trips->find($id);
+        // $trip = $this->trips->find($id);
 
-        $trip->load('userTripEntities','userTripEntities.entity');
+        // $trip->load('userTripEntities','userTripEntities.entity');
 
-        return $trip;
+        return $this->getUserTrips($id);
     }
 
-    public function paid($id)
+    public function paid(Request $request, $id)
     {
         $trip = $this->trips->find($id);
         // dd($trip);
         $trip->status = 'booked';
         $trip->save();
+
+        if ($request->q) {
+            return $this->getUserTrips($id);
+        }
 
         return $this->getUserTrips();
     }
@@ -37,9 +41,14 @@ class TripController extends Controller
         return $this->getUserTrips();
     }
 
-    protected function getUserTrips()
+    protected function getUserTrips($id = null)
     {
-        $trips = auth()->user()->trips;
+        if($id) {
+            $trips = auth()->user()->trips()->where('id',$id)->orderBy('id','desc')->get();
+        } else {
+            $trips = auth()->user()->trips()->orderBy('id','desc')->get();
+        }
+
 
         $trips->load('userTripEntities','userTripEntities.entity');
 

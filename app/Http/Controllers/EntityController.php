@@ -65,9 +65,16 @@ class EntityController extends Controller
         $nearbyEntities = $this->entities->whereIn('id',$nearbyEntityId)->get();
         $entity = $this->entities->find($id);
         $gettingThere = $this->entities->where('to_entity', $id)->get();
+        $selectedTripEntitiesId = [];
         if ($trip = auth()->user()->trips()->where('status','draft')->orderBy('id','desc')->first()) {
             $trip->load('userTripEntities','userTripEntities.entity');
             $selectedTripEntitiesId = $trip->userTripEntities->pluck('entity_id');
+            foreach ($gettingThere as $transport) {
+                // dd($transport->id);
+                if (in_array($transport->id, $selectedTripEntitiesId->toArray())) {
+                    $gettingThere = [$transport];
+                }
+            }
         } else {
             $trip = [];
         }

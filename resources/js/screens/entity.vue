@@ -26,7 +26,7 @@
               {{entity.truncated_summary}}
             </p>
             <div class="mt-4 sm:mt-6">
-              <button v-if="!selectedTripEntitiesId.includes(entity.id)"class="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="addToTrip(entity.id)">Add To Trip</button>
+              <button v-if="!selectedTripEntitiesId.includes(entity.id)"class="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="addToTrip(entity)">Add To Trip</button>
               <button v-if="selectedTripEntitiesId.includes(entity.id)"class="inline-block px-5 py-3 rounded-lg shadow-lg bg-red-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="removeFromTrip(entity)">Remove</button>
               <button class="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="openPage(entity)">More...</button>
             </div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="mt-4 sm:mt-6">
-              <button v-if="!selectedTripEntitiesId.includes(transport.id)"class="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="addToTrip(transport.id)">Add To Trip</button>
+              <button v-if="!selectedTripEntitiesId.includes(transport.id)"class="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="addToTrip(transport)">Add To Trip</button>
               <button v-if="selectedTripEntitiesId.includes(transport.id)"class="inline-block px-5 py-3 rounded-lg shadow-lg bg-red-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="removeFromTrip(transport)">Remove</button>
               <button class="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm text-white uppercase tracking-wider font-semibold sm:text-base" @click="openPage(transport)">More...</button>
             </div>
@@ -96,12 +96,10 @@
 
 <script>
   import EntityCard from '../components/EntityCard'  
-  import EntityCardAddRemove from '../components/EntityCardAddRemove'  
   export default {
     props: ['entityId'],
     components: {
-      EntityCard,
-      EntityCardAddRemove
+      EntityCard
     },
     data() {
       return {
@@ -132,8 +130,8 @@
         self.entity = data.entity
         self.nearbyEntities = data.nearbyEntities
         self.trip = data.trip
-        self.gettingThere = data.gettingThere
         self.selectedTripEntitiesId = data.selectedTripEntitiesId
+        self.gettingThere = data.gettingThere
       },
       getEntity(id) {
         let self = this;
@@ -141,18 +139,46 @@
           self.setData(self,response.data)
         });
       },
-      addToTrip(entityId) {
-        console.log(entityId)
+      addToTrip(entity) {
         let self = this;
-        this.http().get('/api/entities/'+entityId+'/addtotrip').then(function(response) {
-          self.setData(self,response.data)
+        this.http().get('/api/entities/'+entity.id+'/addtotrip').then(function(response) {
+          if (entity.type != 'transport') {
+            self.setData(self,response.data)
+          } else {
+            self.getEntity(self.id)
+            self.hideOtherTransport(entity.id)
+          }
         });
+      },
+      hideOtherTransport(checkedTransportId) {
+        let self = this;
+        let onlySelected = self.gettingThere.filter(function(t) {
+          if (t.id == checkedTransportId) {
+            console.log(t.id)
+            return true;
+          } else {
+            console.log('not matc')
+            return false;
+          }
+        });
+
+        console.log(onlySelected)
+        self.gettingThere = onlySelected
+
       },
       removeFromTrip(entity) {
         let self = this;
         this.http().get('/api/entities/'+entity.id+'/removefromtrip').then(function(response) {
-          self.setData(self,response.data)
+          if (entity.type != 'transport') {
+            self.setData(self,response.data)
+          } else {
+            self.getEntity(self.id)
+            self.showAllTransport(entity.id)
+          }
         });
+      },
+      showAllTransport(checkedTransportId) {
+        
       },
       viewTrip() {
         let self = this;
